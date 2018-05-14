@@ -15,7 +15,7 @@ namespace Foodtruck.Negocio.Models
 
         public String Descrever()
         {
-            return String.Format($"{this.Id} - {this.CPF} - {this.Nome} - {this.Email}");
+            return String.Format($"{this.Id} = {this.CPF} = {this.Nome} = {this.Email}");
         }
     }
 }
