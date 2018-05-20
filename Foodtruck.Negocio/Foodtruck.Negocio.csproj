@@ -46,6 +46,7 @@
     <Compile Include="Models\Lanche.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validacao.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Foodtruck.Persistencia\Foodtruck.Persistencia.csproj">

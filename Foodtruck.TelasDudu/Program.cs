@@ -55,13 +55,26 @@ namespace Foodtruck.TelasDudu
             Console.WriteLine("Informe o email:");
             novoCliente.Email = Console.ReadLine();
 
-            gerenciador.AdicionarCliente(novoCliente);
-            Console.WriteLine("Cliente cadastrado com sucesso");
+            Validacao validacao = gerenciador.AdicionarCliente(novoCliente);
+            if(validacao.Valido)
+            {
+                Console.WriteLine("Cliente cadastrado com sucesso");
+            }
+            else
+            {
+                foreach(var key in validacao.Mensagens.Keys)
+                {
+                    String mensagem = validacao.Mensagens[key];
+                    Console.WriteLine($"{key} : {mensagem}");
+                }
+                { 
+            }
             Console.ReadLine();
         }
 
         public static void ListarClientes()
         {
+            Console.Clear();
             List<Cliente> clientesCadastrados = gerenciador.TodosOsClientes();
             foreach(Cliente cliente in clientesCadastrados)
             {
